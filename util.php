@@ -1,5 +1,5 @@
 <?php 
-    $mysql=mysqli_connect( "localhost", "root", "", "LAB11");
+    $mysql=mysqli_connect( "localhost", "root", "Tisisve123", "DAW");
     if (!$mysql) {
     die("Connection failed: ".mysqli_connect_error());
     }

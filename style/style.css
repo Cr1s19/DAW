@@ -4,6 +4,10 @@
 
 @import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
 
+body {
+  padding: 50px;
+}
+
 body * {
   font-family: 'Lato', sans-serif;
 }
@@ -26,7 +30,6 @@ body * {
 body {
   background: #2c3338;
   color: #606468;
-  font: 87.5%/1.5em 'Open Sans', sans-serif;
   margin: 0;
 }
 
@@ -39,9 +42,8 @@ a:hover {
   text-decoration: underline;
 }
 
-input {
+input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
   border: none;
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5em;
   padding: 0;
@@ -76,6 +78,20 @@ p {
 
 /* ---------- LOGIN ---------- */
 
+ul.errors {
+  background: #F2473F;
+  color: #fff;
+  padding: 10px; 
+  text-align: center; 
+}
+
+ul.success {
+  background: #4AC948;
+  color: #fff;
+  padding: 10px; 
+  text-align: center; 
+}
+
 .login-header {
   text-align: center;
   font-size:2em;
@@ -100,7 +116,7 @@ p {
   width: 50px;
 }
 
-#login form input {
+#login form input[type="text"], input[type="password"], input[type="submit"] {
   height: 50px;
 }
 
@@ -141,6 +157,78 @@ p {
 }
 
 #login > p span {
+  padding-left: 5px;
+}
+
+/* ---------- REGISTER ---------- */
+
+.register-header {
+  text-align: center;
+  font-size:2em;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 30px;  
+}
+
+#register {
+  width: 280px;
+}
+
+#register form span {
+  background-color: #363b41;
+  border-radius: 3px 0px 0px 3px;
+  color: #606468;
+  display: block;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+  border: none;
+  outline: none;
+}
+
+#register form input[type="text"], input[type="password"], input[type="submit"], input[type="email"] {
+  height: 50px;
+}
+
+#register form input[type="text"], #register form input[type="password"], #register form input[type="email"] {
+  background-color: #3b4148;
+  border-radius: 0px 3px 3px 0px;
+  color: #606468;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 280px;
+}
+
+#register form input[type="submit"] {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #2484de;
+  color: #eee;
+  font-weight: normal;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  width: 280px;
+  cursor: pointer;
+}
+
+#register form input[type="submit"]:hover {
+  background-color: #268CEB;
+}
+
+#register > p {
+  text-align: center;
+  font-weight: 300;
+}
+
+#register > p > a {
+  text-align: center;
+  font-weight: 700;
+}
+
+#register > p span {
   padding-left: 5px;
 }
 
@@ -256,3 +344,93 @@ img.transparent {
     opacity:.75;
 }
 
+/* ---------- HOME ---------- */
+
+
+.user-name {
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  font-weight: 100;
+  margin-top: 20px;
+}
+
+.create {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ---------- NAV ---------- */
+#main-nav {
+  position: fixed;
+  height: 50px;
+  top: 0;
+  margin: 0 auto;
+  left: 0;
+  background: #fff;
+  width: 100%;
+}
+
+#main-nav ul li {
+  display: inline-block;
+  padding: 10px;
+  height: 50px;
+  max-height: 50px;
+  line-height: 30px;  
+}
+
+#main-nav ul li:hover {
+  background: rgba(240, 240, 240, 1);
+}
+
+#main-nav ul li a{
+  color: #333;
+  line-height: 
+}
+
+#main-nav ul li a:hover{
+  text-decoration: none;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.button {
+  border: 0 none;
+  border-radius: 2px 2px 2px 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 7px 10px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 16.795%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button.green:hover {
+  text-decoration: none;
+  background: none repeat scroll 0 0 #444444;
+  color: #FFFFFF;
+}
+.button.green {
+  background: none repeat scroll 0 0 #46b98a;
+  color: #FFFFFF;
+}
+.button.blue {
+  background: none repeat scroll 0 0 #2DB6CF;
+  color: #FFFFFF;
+}
+.button.blue:hover {
+  background: none repeat scroll 0 0 #444444;
+  color: #FFFFFF;
+}
