@@ -361,6 +361,88 @@ img.transparent {
   text-align: center;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: auto;
+  margin-left: -200px;
+  margin-top: -150px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 5px;
+  z-index: 10;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+  display: block;
+}
+.modal header {
+  position: relative;
+}
+.modal h2 {
+  color: #444;
+  font-size: 1.7em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.modal .close {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  margin: 0;
+}
+
+.pull-right {
+  float: right;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #007aff;
+  font-weight: 300;
+  font-size: 16px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  /*  &:last-child {
+      border-color: red;
+      margin-bottom: 0;
+    }*/
+}
+button:hover {
+  text-decoration: underline;
+}
+
+.modal input {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  background-color: #3b4148;
+  border-radius: 3px;
+  color: #606468;
+  margin-bottom: 1em;
+  padding: 0 16px;
+}
+
 /* ---------- NAV ---------- */
 #main-nav {
   position: fixed;
@@ -433,4 +515,16 @@ img.transparent {
 .button.blue:hover {
   background: none repeat scroll 0 0 #444444;
   color: #FFFFFF;
+}
+.button.red {
+  background: none repeat scroll 0 0 #E0645C;
+  color: #FFFFFF;
+}
+.button.red:hover {
+  background: none repeat scroll 0 0 #999999;
+  color: #FFFFFF;
+}
+
+.modal .button {
+  width: auto;
 }

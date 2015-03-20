@@ -12,8 +12,21 @@
   </nav>
   <h1 class="user-name">Bienvenido  <?php echo $login->getUsername() ?></h1>
   <div class="create">
-    <a href="#" class="button blue">Crear álbum</a>
-    <a href="#" class="button green">Subir imagen</a>
+    <button class="button blue toggleModal">Crear álbum</button>
+    <button class="button green">Subir imagen</button>
   </div>
-</body>
-</html>
+  <div class="modal">
+    
+    <header>
+      <h2>Crear álbum</h2>
+      <button class="close toggleModal">Cerrar</button>
+    </header>
+    
+    <section>
+      <p><input type="text" id="album-name" placeholder="Nombre"></p>
+    </section>
+    
+    <button class="button green pull-right">Crear</button>
+    
+  </div>
+<?php include('_footer.php'); ?>
