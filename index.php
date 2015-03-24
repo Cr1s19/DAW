@@ -17,6 +17,7 @@ require_once('classes/Login.php');
 
 // crea un nuevo objeto de login, se puede ver en el archivo para más información
 $login = new Login();
+$login->getFolders();
 
 // valida si ya se inició sesión
 if ($login->isUserLoggedIn() == true) {

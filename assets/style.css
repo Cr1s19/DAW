@@ -259,22 +259,22 @@ ul.success {
 
 p 
 { 
-color: white;
-font-weight: 700;
+  color: white;
+  font-weight: 700;
 }
 
 .texto{
-color: white;
+  color: white;
 }
 
 header {
   background: url("banda.jpg") repeat-x;
   width: 100%;
   height: 100%;
-background-position: top;
+  background-position: top;
   text-align:center;
   text-decoration-color: currentColor; 
-    color: white;
+  color: white;
 }
 
 .cabecera2 {
@@ -286,66 +286,95 @@ background-position: top;
 }
 
 .trasfondo {
-background: url("trasfondo.jpg") repeat-x;
+  background: url("trasfondo.jpg") repeat-x;
 }
 
 table {
-    align-self: center;
-    border-collapse: separate;
-    text-align: center;
-    font-family:sans-serif;
+  align-self: center;
+  border-collapse: separate;
+  text-align: center;
+  font-family:sans-serif;
 }
 
 table, th, td {
-    border: 2px solid white;
-    color: white; 
+  border: 2px solid white;
+  color: white; 
 }
 
 .titulo{
-text-align: center;
-font-family: sans-serif;
-color: white;
+  text-align: center;
+  font-family: sans-serif;
+  color: white;
 }
 
 .subtitulo{
-text-align: center;
-font-family: sans-serif;
-color: white;
+  text-align: center;
+  font-family: sans-serif;
+  color: white;
 }
 
 .refs{
-    color:white;
-    font-size: 18pt;
+  color:white;
+  font-size: 18pt;
 }
 
 .refstext{
-color:white;
-font-size: 8pt;
+  color:white;
+  font-size: 8pt;
 }
 
 .pregunta{
-    font-style: italic;
-    font-weight: 550;
+  font-style: italic;
+  font-weight: 550;
 }
 
 .image {
-    position: absolute;
-    top: 100px;
-    right: 300px;
+  position: absolute;
+  top: 100px;
+  right: 300px;
 }
 
 .transp-block {
-    background: #000 url(watermark.jpg) no-repeat;
-    width: 575px;
-    height: 335px;
+  background: #000 url(watermark.jpg) no-repeat;
+  width: 575px;
+  height: 335px;
 }
 img.transparent {
-    filter:alpha(opacity=75);
-    opacity:.75;
+  filter:alpha(opacity=75);
+  opacity:.75;
 }
 
 /* ---------- HOME ---------- */
 
+#albums-images {
+  margin-top: 30px;
+  width: 100%;
+}
+
+#albums-images ul{
+  list-style-type: none;
+  padding: none;
+  width: 100%;
+}
+
+#albums-images ul li {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+
+#albums-images ul li a {
+  text-align: center;
+}
+
+#albums-images ul li a span{
+  font-size: 50px;
+}
+
+#albums-images ul li a:hover {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
 
 .user-name {
   text-align: center;
@@ -422,11 +451,8 @@ button {
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  /*  &:last-child {
-      border-color: red;
-      margin-bottom: 0;
-    }*/
 }
+
 button:hover {
   text-decoration: underline;
 }

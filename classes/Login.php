@@ -230,6 +230,22 @@ class Login
         $this->messages[] = MESSAGE_LOGGED_OUT;
     }
 
+    public function newAlbum($album_name, $user_id) {
+        if ($this->databaseConnection()) {
+            $query_new_album_insert = $this->db_connection->prepare('INSERT INTO albums (name, user_id) VALUES(:album_name, :user_id)');
+            $query_new_album_insert->bindValue(':album_name', $album_name, PDO::PARAM_STR);
+            $query_new_album_insert->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+            $query_new_album_insert->execute();
+
+            $album_id = $this->db_connection->lastInsertId();
+
+            if($album_id > 0) {
+                return $album_id;
+            }
+        }
+        return false;
+    }
+
     public function isUserLoggedIn()
     {
         return $this->user_is_logged_in;
@@ -475,6 +491,24 @@ class Login
     public function getUsername()
     {
         return $this->user_name;
+    }
+
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    public function getFolders()
+    {
+        if ($this->databaseConnection()) {
+            $query_albums_select = $this->db_connection->prepare('SELECT * FROM albums where user_id = :user_id');
+            $query_albums_select->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+            $query_albums_select->execute();
+            $result = $query_albums_select->fetchAll();
+            $_SESSION['user_albums'] = $result;
+            return $result;
+        }
+        return false;
     }
 
     /**
