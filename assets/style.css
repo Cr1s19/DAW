@@ -358,6 +358,7 @@ img.transparent {
 }
 
 #albums-images ul li {
+  margin-top: 10px; 
   display: inline-block;
   width: 25%;
   text-align: center;
@@ -365,6 +366,13 @@ img.transparent {
 
 #albums-images ul li a {
   text-align: center;
+}
+
+#albums-images ul li a img {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px; 
 }
 
 #albums-images ul li a span{
@@ -540,6 +548,7 @@ button:hover {
 }
 .button.blue:hover {
   background: none repeat scroll 0 0 #444444;
+  text-decoration: none;
   color: #FFFFFF;
 }
 .button.red {

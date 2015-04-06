@@ -39,6 +39,10 @@ class Login
                 $_POST['user_rememberme'] = null;
             }
             $this->loginWithPostData($_POST['user_name'], $_POST['user_password'], $_POST['user_rememberme']);
+        } 
+
+        if (isset($_POST["uploadImage"])) {
+            $this->uploadImage();
         }
 
         if (isset($_POST["request_password_reset"]) && isset($_POST['user_name'])) {
@@ -506,6 +510,50 @@ class Login
             $query_albums_select->execute();
             $result = $query_albums_select->fetchAll();
             $_SESSION['user_albums'] = $result;
+            return $result;
+        }
+        return false;
+    }
+
+    public function uploadImage()
+    {
+        $validextensions = array("jpeg", "jpg", "png");
+        $temporary = explode(".", $_FILES["file"]["name"]);
+        $file_extension = end($temporary);
+        //Missing error handling
+        if ((($_FILES["file"]["type"] == "image/png")
+        || ($_FILES["file"]["type"] == "image/jpg")
+        || ($_FILES["file"]["type"] == "image/jpeg"))){
+            $new_image_name = 'image_' . date('Y-m-d-H-i-s') . '_' . uniqid() . '.' . $file_extension;
+            move_uploaded_file($_FILES["file"]["tmp_name"],
+            "uploads/" . $new_image_name);
+            if ($this->databaseConnection()) {
+                $query_new_image_insert = $this->db_connection->prepare('INSERT INTO imageUrl (URL, userid) VALUES(:image_url, :user_id)');
+                $query_new_image_insert->bindValue(':image_url', "uploads/" . $new_image_name, PDO::PARAM_STR);
+                $query_new_image_insert->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+                $query_new_image_insert->execute();
+
+                $image_id = $this->db_connection->lastInsertId();
+
+                if($image_id > 0) {
+                    return $image_id;
+                }
+            }
+        } else {
+            echo $_FILES["file"]["type"];
+        }
+
+        return false;
+    }
+
+    public function getImages() 
+    {
+        if ($this->databaseConnection()) {
+            $query_images_select = $this->db_connection->prepare('SELECT * FROM imageUrl where userid = :user_id');
+            $query_images_select->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+            $query_images_select->execute();
+            $result = $query_images_select->fetchAll();
+            $_SESSION['user_images'] = $result;
             return $result;
         }
         return false;

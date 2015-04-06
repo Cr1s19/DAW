@@ -1,6 +1,12 @@
 $('.toggleModal').on('click', function (e) {
   
-  $('.modal').toggleClass('active');
+  $('#modal').toggleClass('active');
+  
+});
+
+$('.toggleModal2').on('click', function (e) {
+  
+  $('#modal2').toggleClass('active');
   
 });
 
