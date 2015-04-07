@@ -46,7 +46,6 @@
         // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                include 'AES.php';
                 AES.function_construnc();
                 echo "El archivo ". basename( $_FILES["fileToUpload"]["name"]). " has sido subido exitosamente! bien :D";
             } else {
