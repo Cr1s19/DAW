@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
         <link rel="stylesheet" type= "text/css" href="MisEstilos2.css" />
 	   <head>
 		  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -46,6 +46,8 @@
         // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                include 'AES.php';
+                AES.function_construnc();
                 echo "El archivo ". basename( $_FILES["fileToUpload"]["name"]). " has sido subido exitosamente! bien :D";
             } else {
                 echo "Lo sentimos, hubo un error subiendo tu archivo :( .";
