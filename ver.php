@@ -15,9 +15,8 @@
             $images = glob("$dir{*.gif,*.jpg,*.png}", GLOB_BRACE);  
             foreach($images as $v){  
             echo '<img src="'.$v.'" border="0" style="width:100px;float:left;margin:10px;" />';  
-            }  
-            ?>  
+            }
+            ?>
         </div>
-    
 </body>
 </html>
