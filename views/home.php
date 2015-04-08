@@ -13,17 +13,6 @@
     <button class="button green toggleModal2">Subir imagen</button>
   </div>
   <div id="albums-images">
-    <?php $result = $login->getFolders();  if(count($result) > 0) {?>
-      <ul id="albums-images-list">
-      <?php for($i = 0; $i < count($result); $i++) {?>
-        <li>
-          <a href="/albums.php?<?php echo $result[$i]['album_id'] ?>">
-            <span class="icon-album fontawesome-folder-close-alt"></span><br> <?php echo $result[$i]['name'] ?>
-          </a>
-        </li>
-      <?php } ?>
-      </ul>
-    <?php } ?>
     <?php $result = $login->getImages();  if(count($result) > 0) {?>
       <ul id="albums-images-list">
       <?php for($i = 0; $i < count($result); $i++) {?>
